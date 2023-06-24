@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>통나무의 안은?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      padding: 3px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    var now = 2
+
+  </script>
+</head>
+<body>
+
+  <h1>통나무의 안을 영어로하면?</h1>
+  <form id="inputForm">
+    <label for="inputField">정답을 써라:</label>
+    <input type="text" id="inputField" name="inputField">
+    <br>
+    <input type="submit" value="제출">
+    <h5>패치노트:최승호,장강민,김건우,피승원</h5>
+  </form>
+
+  <script>
+    document.getElementById("inputForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      var userInput = document.getElementById("inputField").value;
+      if (userInput.toLowerCase() === "로그인") {
+        if (now != 0) {
+          alert("올 ㅋ 좀 치네");
+        }
+        else {
+          alert("이제야 맞췄냐");
+        }
+        window.location.href = "login.html";
+      } else {
+        if (now != 0){
+          alert("틀렸어 인마");
+          now -= 1
+        }
+        else {
+          alert("영어공부좀 해 통나무는 영어로 로그야");
+        }
+      }
+    });
+  </script>
+</body>
+</html>

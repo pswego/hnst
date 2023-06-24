@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>통나무 안</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+
+    .container h2 {
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form-group button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #4caf50;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .form-group button:hover {
+      background-color: #45a049;
+    }
+
+    .error-message {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>통나무 안</h2>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="username">니 이름:</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">니 생일:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="form-group">
+        <button type="submit">통나무 안</button>
+      </div>
+      <div class="error-message" id="errorMessage"></div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Get input values
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+
+      // Perform input validation and authentication
+      if (username === '김건우' && password === '0525') {
+        // Successful login
+        window.location.href = 'kkw.html'; // Redirect to dashboard
+      }
+      else if (username === '장강민' && password === '0716') {
+          // Successful login
+          window.location.href = 'jkm.html'; // Redirect to dashboard
+      }
+      else if (username === '피승원' && password === '1207') {
+          // Successful login
+          window.location.href = 'psw.html'; // Redirect to dashboard
+      }
+      else if (username === '최승호' && password === '1220') {
+          // Successful login
+          window.location.href = 'csh.html'; // Redirect to dashboard
+      }  else {
+        // Failed login
+        document.getElementById('errorMessage').textContent = '잘못된 이름 혹은 생일이다 멍청아.';
+      }
+    });
+  </script>
+</body>
+</html>
